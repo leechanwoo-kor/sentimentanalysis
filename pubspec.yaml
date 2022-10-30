@@ -38,6 +38,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.5
   shared_preferences: ^2.0.15
+  firebase_core: ^1.19.2
+  cloud_firestore: ^3.3.0
+  firebase_auth: ^3.4.2
+  provider: ^6.0.3
+  firebase_core_platform_interface: 4.5.1
+  firebase_messaging: ^13.0.4 # previously I only had this which was pulling in 4.5.2 which you do not want
 
 dev_dependencies:
   flutter_test:

@@ -10,14 +10,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    Timer(Duration(milliseconds: 2000), () {
-      moveScreen();
-    });
-  }
-
   Future<bool> checkLogin() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool isLogin = prefs.getBool('isLogin') ?? false;
@@ -31,6 +23,14 @@ class _SplashScreenState extends State<SplashScreen> {
       } else {
         Navigator.of(context).pushReplacementNamed('/login');
       }
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(milliseconds: 2000), () {
+      moveScreen();
     });
   }
 
