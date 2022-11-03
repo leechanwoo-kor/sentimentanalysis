@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sentimentanalysis/firebase_options.dart';
 import 'package:sentimentanalysis/models/model_auth.dart';
+import 'package:sentimentanalysis/models/model_item_provider.dart';
 import 'package:sentimentanalysis/screens/screen_index.dart';
 import 'package:sentimentanalysis/screens/screen_login.dart';
 import 'package:sentimentanalysis/screens/screen_splash.dart';
 import 'package:sentimentanalysis/screens/screen_register.dart';
+import 'package:sentimentanalysis/screens/screens_detail.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +23,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => FirebaseAuthProvider()),
+        ChangeNotifierProvider(create: (_) => ItemProvider()),
       ],
       child: MaterialApp(
         title: 'flutter test',
@@ -29,6 +32,7 @@ class MyApp extends StatelessWidget {
           '/login': (context) => LoginScreen(),
           '/splash': (context) => SplashScreen(),
           '/register': (context) => RegisterScreen(),
+          '/detail': (context) => DetailScreen(),
         },
         initialRoute: '/splash',
       ),
